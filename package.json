@@ -1,0 +1,10 @@
+{
+  "name" : "labchat",
+  "description" : "A video chat app for The Lab.",
+  "version" : "0.0.1",
+  "author" : "Sean Holden <seanholden1@gmail.com>",
+  "dependencies" : {
+    "opentok" : "0.3.x",  
+    "express" : "3.3.4"
+  }
+}
