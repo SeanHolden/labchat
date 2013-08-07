@@ -1,1 +1,22 @@
-<p>Copy this URL: <%= url %></p>
+<div id="session-token" style="display:none;" data-token="<%= token %>" data-sessionid="<%= sessionId %>"></div>
+<div class="logo">
+  <img src="/img/JibberJabberLogo.png" alt="JibberJabberLogo" id="lab_logo" />
+</div>
+
+
+<div class="main_content_container">
+
+  <div id="stream-containers">
+    <div id="myPublisherDiv"></div>
+  </div>
+
+  <br />
+
+  <p class="description"><strong>Send this URL to others so they can Jabber on with you <br />
+  (Chrome or Firefox 22+ required. Maximum of 4 participants.):</strong></p>
+
+  <input id="copy_url" type="text" readonly="readonly" value="<%= url %>">
+
+</div>
+
+<img src="/img/Experiment.png" alt="under experimentation" id="ribbon" />

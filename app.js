@@ -9,13 +9,24 @@ app.configure(function() {
   app.set('view engine', 'ejs');
   app.set('views', __dirname+'/views');
   app.use(expressLayouts);
+  app.use(express.static(__dirname + '/public'));
 });
+
+var gv = GroupVideo();
 
 // Routes
 app.get('/', function(request, response){
   response.setHeader('Content-Type', 'text/html');
-  var gv = GroupVideo();
-  gv.getSessionIdAndToken(request, response, gv.sessionTokenCallback);
+  gv.getSessionIdAndToken(request, response, function(response, sessionId, token){
+    response.render('index', {
+      locals: {
+        url: gv.urlToCopy(sessionId),
+        token: token,
+        sessionId: sessionId
+      }
+    });
+    response.end();
+  });
 });
 
 app.listen(3000);

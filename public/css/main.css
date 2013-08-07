@@ -1,0 +1,74 @@
+// Place all the styles related to the videos controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*fonts*/
+@font-face {
+  font-family: 'museo_700';
+  src: font-url('https://s3-eu-west-1.amazonaws.com/labchat/fonts/Museo700-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+body {
+  color:#fff;
+  background-color:#0090d0;
+  font-family:'museo_700' sans-serif;
+}
+
+footer{
+  border-top:2px ridge #fff;
+  font-size:80%;
+  margin-top:100px;
+}
+
+footer p{
+  padding-top:10px;
+}
+
+.main_content_container{
+  width:80%;
+  margin:auto;
+}
+
+.logo{
+  vertical-align:text-top;
+}
+
+.description{
+  font-size:150%;
+}
+
+.description sup{
+  font-size:50%;
+}
+
+#lab_logo{
+  padding:20px;
+}
+
+#copy_url{
+  width:80%;
+  padding:10px;
+  border-radius:7px;
+}
+
+#jabber-logo{
+  float:right;
+}
+
+#myPublisherDiv{
+  display:inline-block;
+}
+
+.streams{
+  display:inline-block;
+  margin-right:2px;
+}
+
+#ribbon{
+  position:absolute;
+  top:0;
+  right:0;
+}
