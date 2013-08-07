@@ -1,13 +1,21 @@
 var express = require('express');
+var expressLayouts = require('express-ejs-layouts');
+var GroupVideo = require('./lib/groupvideo');
 var app = express();
-var key = process.env.TOKBOX_API_KEY;    // Replace with your API key  
-var secret = process.env.TOKBOX_SECRET;  // Replace with your API secret  
-var opentok = new OpenTok.OpenTokSDK(key, secret);
 
-app.get('/', function(req, res){
-  var body = '<h1>Hello World</h1>';
-  res.setHeader('Content-Type', 'text/html');
-  res.end(body);
+
+// Settings
+app.configure(function() {
+  app.set('view engine', 'ejs');
+  app.set('views', __dirname+'/views');
+  app.use(expressLayouts);
+});
+
+// Routes
+app.get('/', function(request, response){
+  response.setHeader('Content-Type', 'text/html');
+  var gv = GroupVideo();
+  gv.getSessionIdAndToken(request, response, gv.sessionTokenCallback);
 });
 
 app.listen(3000);
