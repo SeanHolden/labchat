@@ -30,3 +30,4 @@ app.get('/', function(request, response){
 });
 
 app.listen(3000);
+console.log('Listening on port 3000 in %s environment', process.env.NODE_ENV);
